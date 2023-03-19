@@ -1,0 +1,18 @@
+{
+  "name": "jogo-da-velha-server",
+  "version": "1.0.0",
+  "description": "Servidor de Jogo da Velha",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Alisson Queiroz",
+  "license": "ISC",
+  "dependencies": {
+    "http": "^0.0.1-security",
+    "ws": "^8.12.1"
+  }
+}
