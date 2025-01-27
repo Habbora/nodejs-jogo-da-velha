@@ -9,10 +9,9 @@ let isGameOver = false
 let msgHeader = `Vez do jogador: ${playerPiece[playerSelector]}`
 
 function createTabuleiroDataStructure() {
-  const numberOfPixels = tabuleiroWidth * tabuleiroHeight
-
+  const numberOfPixels = tabuleiroWidth * tabuleiroHeight;
   for (let index = 0; index < numberOfPixels; index++) {
-      tabuleiroArray[index] = "";
+      tabuleiroArray[index] = '';
   }
 }
 
@@ -101,14 +100,16 @@ function tabuleiroSelectCase(index) {
   tabuleiroIsGamerOver()
 }
 
-const wss = new WebSocket.Server({ port: 8080 });
-
 function webSocketSend(ws) {
   ws.send(JSON.stringify({
     tabuleiroArray,
+    tabuleiroWidth,
+    tabuleiroHeight,
     msgHeader
   }));
 }
+
+const wss = new WebSocket.Server({ port: 8080 });
 
 wss.on('connection', function connection(ws) {
   console.log('Nova conexão estabelecida');
